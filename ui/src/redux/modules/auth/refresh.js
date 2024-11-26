@@ -52,7 +52,7 @@ const refreshToken = type => createAsyncDuck({
 
   doAction: function* refreshSaga({ tokenType, tokenId }) {
     const { status, body } = yield post({
-      url: `/api${routes.AUTH_JWT_REFRESH}`,
+      url: `/lrs/api${routes.AUTH_JWT_REFRESH}`,
       body: {
         id: tokenId,
         tokenType,

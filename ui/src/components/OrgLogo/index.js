@@ -4,7 +4,7 @@ import DEFAULT_LOGO from 'ui/static/logos/default/default.gif';
 const getLogoSrc = (organisation) => {
   const orgId = organisation.get('_id');
   const updatedAt = organisation.getIn(['logo', 'updatedAt']);
-  return `/api/downloadlogo/${orgId}?t=${updatedAt}`;
+  return `/lrs/api/downloadlogo/${orgId}?t=${updatedAt}`;
 };
 
 const getSrc = organisation =>

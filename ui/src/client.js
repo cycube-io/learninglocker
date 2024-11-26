@@ -14,9 +14,11 @@ const llClient = new LLApiClient();
 
 const dest = document.getElementById('content');
 const store = createStore(llClient, router, window.__data);
-router.usePlugin(browserPlugin())
-      .setDependency('store', store)
-      .start();
+router.usePlugin(browserPlugin(
+  { base: '/lrs' }
+))
+  .setDependency('store', store)
+  .start();
 llClient.setStore(store);
 
 // Global (context) variables that can be easily accessed from any React component

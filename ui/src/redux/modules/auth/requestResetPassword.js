@@ -40,7 +40,7 @@ const requestResetPassword = createAsyncDuck({
 
   doAction: function* requestResetPasswordSaga({ email }) {
     const { status, body } = yield post({
-      url: `/api${routes.AUTH_RESETPASSWORD_REQUEST}`,
+      url: `/lrs/api${routes.AUTH_RESETPASSWORD_REQUEST}`,
       body: {
         email
       }

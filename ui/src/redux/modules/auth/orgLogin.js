@@ -45,7 +45,7 @@ const login = createAsyncDuck({
     if (!token) throw Error('Organisation login attempted with no user login');
 
     const { status, body } = yield post({
-      url: `/api${routes.AUTH_JWT_ORGANISATION}`,
+      url: `/lrs/api${routes.AUTH_JWT_ORGANISATION}`,
       headers: {
         Authorization: `Bearer ${token}`
       },

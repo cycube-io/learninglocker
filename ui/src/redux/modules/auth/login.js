@@ -42,7 +42,7 @@ const basicLogin = createAsyncDuck({
   checkShouldFire: (action, state) => shouldLoginSelector(state),
 
   doAction: function* loginSaga({ username, password }) {
-    const { status, body } = yield post(`/api${routes.AUTH_JWT_PASSWORD}`)
+    const { status, body } = yield post(`/lrs/api${routes.AUTH_JWT_PASSWORD}`)
       .use(basicAuth(username.toLowerCase(), password));
     if (status > 200 && status < 500) throw new Error(body.message || body);
     else if (status >= 500) throw new Error('There was an error communicating with the login server.');

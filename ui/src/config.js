@@ -13,6 +13,8 @@ const assetPort = isProduction ? port : devPort;
 let assetPath = '';
 if (!isProduction) {
   assetPath += `//${host}:${assetPort}`;
+} else {
+  assetPath += '/lrs';
 }
 assetPath += '/';
 

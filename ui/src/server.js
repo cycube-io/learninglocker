@@ -62,7 +62,7 @@ app.use(Express.static(path.join(__dirname, '..', 'public'), {
 }));
 
 // Proxy to API server
-app.use('/api', (req, res) => {
+app.use('/lrs/api', (req, res) => {
   proxy.web(req, res, { target: targetUrl });
 });
 

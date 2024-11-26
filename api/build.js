@@ -2,7 +2,7 @@ import 'dotenv/config';
 import path from 'path';
 import run from '../lib/tools/run';
 import bundle from '../lib/tools/bundle';
-import newrelicConfig from '../lib/tools/newrelicConfig';
+// import newrelicConfig from '../lib/tools/newrelicConfig';
 import getWebpackConfig from '../lib/tools/getWebpackConfig';
 
 const isDebug = !process.argv.includes('--release');
@@ -13,7 +13,7 @@ const stats = !!process.argv.includes('--stats');
 const sourceDir = path.resolve(__dirname, 'src');
 const outputDir = path.resolve(__dirname, 'dist', 'server');
 
-const bannerPrefix = newrelicConfig({ appType: 'API' });
+// const bannerPrefix = newrelicConfig({ appType: 'API' });
 
 const webpackConfig = getWebpackConfig({
   isDebug,
@@ -26,7 +26,7 @@ const webpackConfig = getWebpackConfig({
   entry: {
     server: 'server.js',
   },
-  bannerPrefix
+  // bannerPrefix
 });
 
 /**
